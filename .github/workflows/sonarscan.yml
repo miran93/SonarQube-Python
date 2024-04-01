@@ -1,0 +1,20 @@
+name: SonarQube Scan
+
+on:
+  push:
+    branches:
+      - main  # Set the branch you want to trigger the scan on
+
+jobs:
+  sonarqube_scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: SonarQube Scan
+      run: sonar-scanner
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Set the SonarQube token as a secret in your repository
+
