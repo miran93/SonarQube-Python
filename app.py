@@ -102,7 +102,7 @@ def main():
             bank.transfer(sender_name, receiver_name, amount)
 
         elif choice == '6':
-            print("Exiting...")
+            print("Exiting....")
             break
 
         else:
